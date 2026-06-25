@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olly Breheny</title>
+  <meta name="description" content="Olly Breheny - Paid Search Executive and developer building automation tools for Google Ads account management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --border: #e5e5e5;
+      --accent: #1a56db;
+      --accent-light: #eff6ff;
+      --card-bg: #fafafa;
+      --max: 720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* SECTIONS */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* HERO */
+    #hero {
+      padding-top: 96px;
+      padding-bottom: 80px;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.8; text-decoration: none; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ABOUT */
+    #about h2, #projects h2, #skills h2, #contact h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      color: #333;
+      margin-bottom: 14px;
+    }
+
+    #about p:last-child { margin-bottom: 0; }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      background: var(--card-bg);
+      transition: border-color 0.15s;
+    }
+
+    .project-card:hover { border-color: #bbb; }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .project-status {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .status-live { background: #dcfce7; color: #15803d; }
+    .status-work { background: #eff6ff; color: #1a56db; }
+    .status-building { background: #fef9c3; color: #854d0e; }
+
+    .project-desc {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      color: #444;
+    }
+
+    .project-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-group h3 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .skill-group li {
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* CONTACT */
+    #contact p {
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      section { padding: 56px 20px; }
+      #hero { padding-top: 64px; }
+      .nav-links { display: none; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Olly Breheny</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <p class="hero-eyebrow">Paid Search &amp; Developer</p>
+    <h1>I build tools that make managing Google Ads less painful.</h1>
+    <p>Paid Search Executive by day. I spend the rest of my time writing automation tools, API integrations, and AI-powered workflows for Google Ads account management.</p>
+    <div class="hero-links">
+      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="https://www.linkedin.com/in/ollybreheny" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/OllyClaw" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I work as a Paid Search Executive managing Google Ads campaigns across a range of client accounts. Over the past year I've been moving increasingly into the technical side of the role - building integrations that connect Google Ads, GA4, and Slack together through AI-powered workflows using the Model Context Protocol (MCP).
+    </p>
+    <p>
+      The automation work started out of frustration with the amount of repetitive, manual work involved in account management - checking budgets, dismissing recommendations, pulling reports. I started writing small tools to handle these tasks and got hooked on the broader problem of making programmatic access to Google Ads data more useful and flexible.
+    </p>
+    <p>
+      Outside of work I'm building my own Google Ads dashboard and MCP server using the Google Ads API. The goal is a lightweight tool for querying campaign data, monitoring account health, and surfacing performance anomalies - something more purpose-built than the standard UI for the way I actually work with accounts.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">OneClickDismiss</span>
+          <span class="project-status status-live">Live</span>
+        </div>
+        <p class="project-desc">
+          A Chrome extension that dismisses all Google Ads recommendations on the page in one click. Built because the default flow of dismissing recommendations one by one, with a confirmation dialog each time, adds up to a meaningful time drain across large accounts. The extension injects a button into the recommendations page that handles the entire sequence automatically.
+        </p>
+        <div class="project-footer">
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">Chrome Extensions</span>
+            <span class="tag">Google Ads UI</span>
+          </div>
+          <a class="project-link" href="https://github.com/OllyClaw/OneClickDismiss" target="_blank" rel="noopener">
+            GitHub &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">Google Ads MCP Integration</span>
+          <span class="project-status status-work">Work project</span>
+        </div>
+        <p class="project-desc">
+          Connected the Google Ads MCP server to our internal AI workflow, enabling natural language queries against live campaign data. This replaced a set of manual reporting processes - account managers can now ask questions about performance, budget pacing, and keyword coverage directly, without needing to navigate the Google Ads UI or build custom reports. Anomaly alerts are routed through Slack.
+        </p>
+        <div class="project-footer">
+          <div class="tags">
+            <span class="tag">MCP</span>
+            <span class="tag">Google Ads API</span>
+            <span class="tag">Python</span>
+            <span class="tag">Slack API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">GA4 MCP Integration</span>
+          <span class="project-status status-work">Work project</span>
+        </div>
+        <p class="project-desc">
+          Wired up Google Analytics 4 via MCP so that conversion data and audience performance sit alongside Google Ads data in the same context. Used for cross-channel analysis - understanding where campaign spend is actually driving results rather than just clicks. The combined view has changed how we approach budget allocation decisions.
+        </p>
+        <div class="project-footer">
+          <div class="tags">
+            <span class="tag">MCP</span>
+            <span class="tag">GA4 API</span>
+            <span class="tag">Python</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">Google Ads Dashboard &amp; MCP Server</span>
+          <span class="project-status status-building">In development</span>
+        </div>
+        <p class="project-desc">
+          A personal project - building a custom Google Ads management dashboard and MCP server backed directly by the Google Ads API. The aim is a lightweight interface for campaign monitoring, performance reporting, and keyword planning that works the way I actually use data, rather than the way the standard UI presents it.
+        </p>
+        <p class="project-desc">
+          Planned API usage: <strong>GoogleAdsService</strong> for campaign performance queries and reporting, <strong>CampaignService</strong> for account structure and status monitoring, <strong>KeywordPlanService</strong> for keyword research tooling, and <strong>CustomerService</strong> for account hierarchy management. Initial scope is my own Google Ads accounts.
+        </p>
+        <div class="project-footer">
+          <div class="tags">
+            <span class="tag">Google Ads API</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Python</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Advertising</h3>
+        <ul>
+          <li>Google Ads</li>
+          <li>Performance Max</li>
+          <li>Search &amp; Shopping</li>
+          <li>Bid strategy</li>
+          <li>Audience targeting</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>APIs &amp; Data</h3>
+        <ul>
+          <li>Google Ads API</li>
+          <li>GA4 API</li>
+          <li>Slack API</li>
+          <li>REST APIs</li>
+          <li>OAuth 2.0</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Development</h3>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+          <li>Chrome Extensions</li>
+          <li>MCP Protocol</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Tooling</h3>
+        <ul>
+          <li>Google Ads Editor</li>
+          <li>Looker Studio</li>
+          <li>BigQuery</li>
+          <li>Git / GitHub</li>
+          <li>Claude / AI workflows</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Open to conversations about Google Ads API development, automation tooling, or paid search in general.</p>
+    <div class="contact-links">
+      <a href="mailto:ollybreheny@icloud.com" class="btn btn-primary">Email me</a>
+      <a href="https://www.linkedin.com/in/ollybreheny" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/OllyClaw" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Olly Breheny &middot; ollyy.co.uk</p>
+  </footer>
+
+</body>
+</html>
