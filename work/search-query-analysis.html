@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scheduled AI search query analysis · Olly Breheny</title>
+  <meta name="description" content="A scheduled workflow that analyses Google Ads search terms with an LLM and delivers negative keyword recommendations to Slack for human approval." />
+  <link rel="canonical" href="https://ollyy.co.uk/work/search-query-analysis" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">Olly Breheny</a>
+      <ul class="nav-links">
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="article">
+    <span class="eyebrow">Case study</span>
+    <h1>Scheduled AI search query analysis</h1>
+    <ul class="article-meta">
+      <li>Platform81</li>
+      <li>In production</li>
+      <li>Google Ads &middot; MCP &middot; LLM &middot; Slack</li>
+    </ul>
+    <p class="lede">A scheduled workflow that reviews search terms across eight client accounts, recommends negative keywords with a confidence score and a suggested list placement, and puts the results in front of a person before anything changes.</p>
+
+    <ul class="impact">
+      <li><strong>8</strong><span>client accounts covered</span></li>
+      <li><strong>8+ hrs</strong><span>of weekly manual analysis replaced</span></li>
+      <li><strong>1,000+</strong><span>negative additions supported per week</span></li>
+    </ul>
+
+    <h2>Problem</h2>
+    <p>Search query review is one of the highest-value routine jobs in paid search and one of the least enjoyable. Every week, for every account, someone pulls the search terms report, reads through it line by line, decides which queries are irrelevant, decides whether each one should be blocked at campaign or account level, and then adds them to the right negative list.</p>
+    <p>Done properly it took me a minimum of an hour per account per week. Across eight accounts that is a full working day, every week, spent on a task that is mostly pattern recognition against context I already hold in my head about the client.</p>
+    <p>It is also the first thing to get squeezed when the week is busy, which means wasted spend accumulates quietly.</p>
+
+    <h2>Approach</h2>
+    <p>The judgement in this task is not really about the query in isolation. It is about the query <em>against the client's context</em>. So the workflow needed three things: reliable access to live search term data, a written form of the context I would otherwise apply from memory, and a model doing the reading.</p>
+    <p>I author a context document for each account, building it with an LLM. It sets out what the business sells and what it does not, so the analysis reads each query against the client rather than in isolation.</p>
+    <p>The analysis then runs on a schedule rather than on demand, so it happens whether or not the week is busy.</p>
+
+    <h2>Workflow</h2>
+    <ol class="flow">
+      <li>
+        <span class="flow-label">Google Ads</span>
+        <span class="flow-note">Live search term data for the account</span>
+      </li>
+      <li>
+        <span class="flow-label">Google Ads MCP integration</span>
+        <span class="flow-note">Structured retrieval of the query set</span>
+      </li>
+      <li>
+        <span class="flow-label">Client context document</span>
+        <span class="flow-note">What the business sells, what it doesn't, known waste patterns</span>
+      </li>
+      <li>
+        <span class="flow-label">LLM analysis</span>
+        <span class="flow-note">Each query assessed against that context</span>
+      </li>
+      <li>
+        <span class="flow-label">Recommendations</span>
+        <span class="flow-note">Negative keyword, match type, confidence score, suggested list placement</span>
+      </li>
+      <li>
+        <span class="flow-label">Slack</span>
+        <span class="flow-note">Delivered to the account owner on a schedule</span>
+      </li>
+      <li class="flow-human">
+        <span class="flow-label">Human approval</span>
+        <span class="flow-note">A person reviews and approves before anything is applied</span>
+      </li>
+    </ol>
+
+    <h2>Human oversight</h2>
+    <p>This system does not modify accounts on its own, and that is a design decision rather than a limitation I intend to remove.</p>
+    <p>Negatives are destructive in a specific way: a bad negative silently blocks traffic you wanted, and nothing in the reporting tells you it happened. The cost of a wrong exclusion is asymmetric against the cost of reviewing a list, so the AI does retrieval, analysis and recommendation — the part that scales — and a person does the approval, which is the part that carries the risk.</p>
+    <p>Each recommendation carries a confidence score and a suggested list placement, so a reviewer can move quickly through the clear cases and spend their attention on the ones that need it.</p>
+
+    <h2>Impact</h2>
+    <ul>
+      <li>Running across eight of my client accounts.</li>
+      <li>Replaces a recurring manual process that took a minimum of an hour per account per week — 8+ hours weekly.</li>
+      <li>Supports over 1,000 negative keyword additions per week across those accounts.</li>
+      <li>The review happens on schedule rather than whenever there is time for it, so waste is caught earlier.</li>
+    </ul>
+
+    <div class="panel">
+      <p><strong>Ownership, stated plainly.</strong> I built this workflow. I did not originally build the Google Ads MCP integration underneath it — that was built by my Head of PPC. I run my own version of it through Git, modify and extend it for what my workflows need, and build on top of it.</p>
+      <p>No client data, account identifiers or employer code appear on this page. The architecture above is described at a conceptual level only.</p>
+    </div>
+
+
+    <a class="back-link" href="/#work">&larr; Back to selected work</a>
+  </main>
+
+  <footer>
+    <p>Olly Breheny &middot; <a href="/">ollyy.co.uk</a></p>
+  </footer>
+
+</body>
+</html>

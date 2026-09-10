@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merchant Center disapproval monitoring · Olly Breheny</title>
+  <meta name="description" content="A daily monitoring workflow that logs Merchant Center product approval status across ~30,000 products and alerts Slack when disapprovals appear." />
+  <link rel="canonical" href="https://ollyy.co.uk/work/merchant-center-monitoring" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">Olly Breheny</a>
+      <ul class="nav-links">
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="article">
+    <span class="eyebrow">Case study</span>
+    <h1>Merchant Center disapproval monitoring</h1>
+    <ul class="article-meta">
+      <li>Platform81</li>
+      <li>In production</li>
+      <li>Merchant Center &middot; MCP &middot; Slack</li>
+    </ul>
+    <p class="lede">A daily workflow that tracks product approval status across the highest-risk Shopping accounts and posts a Slack alert the moment disapprovals appear.</p>
+
+    <ul class="impact">
+      <li><strong>~30,000</strong><span>products monitored</span></li>
+      <li><strong>Daily</strong><span>scheduled checks</span></li>
+      <li><strong>Slack</strong><span>alerts on disapproval</span></li>
+    </ul>
+
+    <h2>Problem</h2>
+    <p>Product disapprovals are one of the quietest ways to lose revenue in paid media. A product gets disapproved, it drops out of Shopping and Performance Max, and nothing announces it. Spend simply moves elsewhere and performance dips for a reason that is not visible in the campaign reporting.</p>
+    <p>Finding it meant remembering to open Merchant Center and look, on accounts with tens of thousands of products, across a portfolio where some feeds are far more fragile than others. In practice, disapprovals were often found days later while investigating something else.</p>
+
+    <h2>Approach</h2>
+    <p>This one did not need intelligence, it needed reliability. The check is simple and the value is entirely in it happening every single day without anybody deciding to do it.</p>
+    <p>So the workflow runs on a schedule against the accounts where feed problems actually occur, retrieves approval and disapproval status, logs it so status can be compared over time, and pushes an alert into Slack when something changes for the worse.</p>
+
+    <h2>Workflow</h2>
+    <ol class="flow">
+      <li>
+        <span class="flow-label">Scheduled daily run</span>
+        <span class="flow-note">High-risk Shopping accounts, ~30,000 products</span>
+      </li>
+      <li>
+        <span class="flow-label">Merchant Center MCP integration</span>
+        <span class="flow-note">Retrieves product approval and disapproval status</span>
+      </li>
+      <li>
+        <span class="flow-label">Status log</span>
+        <span class="flow-note">Approval status recorded so changes can be compared day to day</span>
+      </li>
+      <li>
+        <span class="flow-label">Slack alert</span>
+        <span class="flow-note">Triggered when disapprovals appear</span>
+      </li>
+      <li class="flow-human">
+        <span class="flow-label">Human diagnosis &amp; fix</span>
+        <span class="flow-note">Account manager investigates the cause and resolves it with the client or developer</span>
+      </li>
+    </ol>
+
+    <h2>Human oversight</h2>
+    <p>The workflow monitors and alerts. It does not change feeds, edit product data or attempt to resolve disapprovals on its own.</p>
+    <p>That split is deliberate: the cause of a disapproval usually sits outside the ad platform, in the feed or on the site, and fixing it means a conversation with the client or their developer. Automating the monitoring removes the part that was failing, which was noticing. The diagnosis stays with a person.</p>
+
+    <h2>Impact</h2>
+    <ul>
+      <li>Around 30,000 products across problem accounts are checked every day rather than whenever someone thinks to look.</li>
+      <li>Disapprovals surface in Slack on the day they happen, instead of being found later during unrelated investigation.</li>
+      <li>Approval status is logged over time, so recurring feed problems become visible as patterns rather than one-off incidents.</li>
+    </ul>
+
+    <div class="panel">
+      <p><strong>Ownership, stated plainly.</strong> I built this monitoring workflow using a shared Merchant Center MCP integration, and I have also contributed code changes to that underlying integration. I did not originally create it — that was my Head of PPC.</p>
+      <p>No client data, product data, account identifiers or employer code appear on this page.</p>
+    </div>
+
+
+    <a class="back-link" href="/#work">&larr; Back to selected work</a>
+  </main>
+
+  <footer>
+    <p>Olly Breheny &middot; <a href="/">ollyy.co.uk</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,486 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Olly Breheny</title>
-  <meta name="description" content="Olly Breheny - Paid Search Executive and developer building automation tools for Google Ads account management." />
+  <title>Olly Breheny — Performance Media, AI &amp; Automation</title>
+  <meta name="description" content="Olly Breheny — paid media account manager building AI and automation workflows that remove repetitive analysis from performance marketing." />
+  <link rel="canonical" href="https://ollyy.co.uk/" />
+  <meta property="og:title" content="Olly Breheny — Performance Media, AI &amp; Automation" />
+  <meta property="og:description" content="Paid media account manager building AI and automation workflows that remove repetitive analysis from performance marketing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ollyy.co.uk/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #666666;
-      --border: #e5e5e5;
-      --accent: #1a56db;
-      --accent-light: #eff6ff;
-      --card-bg: #fafafa;
-      --max: 720px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--text);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-    /* SECTIONS */
-    section {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 72px 24px;
-    }
-
-    section + section {
-      border-top: 1px solid var(--border);
-    }
-
-    /* HERO */
-    #hero {
-      padding-top: 96px;
-      padding-bottom: 80px;
-    }
-
-    .hero-eyebrow {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    #hero h1 {
-      font-size: clamp(2rem, 5vw, 2.75rem);
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    #hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 540px;
-      margin-bottom: 32px;
-    }
-
-    .hero-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      transition: opacity 0.15s;
-    }
-
-    .btn:hover { opacity: 0.8; text-decoration: none; }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    /* ABOUT */
-    #about h2, #projects h2, #skills h2, #contact h2 {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-
-    #about p {
-      color: #333;
-      margin-bottom: 14px;
-    }
-
-    #about p:last-child { margin-bottom: 0; }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-      background: var(--card-bg);
-      transition: border-color 0.15s;
-    }
-
-    .project-card:hover { border-color: #bbb; }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .project-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .project-status {
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 8px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .status-live { background: #dcfce7; color: #15803d; }
-    .status-work { background: #eff6ff; color: #1a56db; }
-    .status-building { background: #fef9c3; color: #854d0e; }
-
-    .project-desc {
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 14px;
-      line-height: 1.6;
-    }
-
-    .project-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .tag {
-      font-size: 12px;
-      font-weight: 500;
-      padding: 3px 8px;
-      background: #f0f0f0;
-      border-radius: 4px;
-      color: #444;
-    }
-
-    .project-link {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .skill-group h3 {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .skill-group ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .skill-group li {
-      font-size: 14px;
-      color: #333;
-    }
-
-    /* CONTACT */
-    #contact p {
-      color: #444;
-      margin-bottom: 24px;
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 28px 24px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      section { padding: 56px 20px; }
-      #hero { padding-top: 64px; }
-      .nav-links { display: none; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav>
     <div class="nav-inner">
-      <span class="nav-logo">Olly Breheny</span>
+      <a class="nav-logo" href="/">Olly Breheny</a>
       <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <main id="main">
+
   <section id="hero">
-    <p class="hero-eyebrow">Paid Search &amp; Developer</p>
-    <h1>I build tools that make managing Google Ads less painful.</h1>
-    <p>Paid Search Executive by day. I spend the rest of my time writing automation tools, API integrations, and AI-powered workflows for Google Ads account management.</p>
+    <p class="hero-eyebrow">Performance Media &middot; AI &amp; Automation &middot; Marketing Technology</p>
+    <h1>I build technology that makes performance media teams more effective.</h1>
+    <p class="hero-lede">I manage paid media accounts, which is how I know which parts of the job are worth automating. I use AI, APIs and MCP workflows to take the repetitive analysis out of account management — and then get the tools into other people's day-to-day work.</p>
     <div class="hero-links">
-      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="#work" class="btn btn-primary">See what I've built</a>
       <a href="https://www.linkedin.com/in/ollybreheny" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
       <a href="https://github.com/obreheny" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+    <ul class="stats">
+      <li>
+        <span class="stat-value">4+ years</span>
+        <span class="stat-label">in digital marketing, mostly paid search</span>
+      </li>
+      <li>
+        <span class="stat-value">10&ndash;15</span>
+        <span class="stat-label">PPC accounts under management</span>
+      </li>
+      <li>
+        <span class="stat-value">£500&ndash;£50k</span>
+        <span class="stat-label">monthly client budgets</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <p class="section-intro">Automation and AI workflows I've built inside paid media teams. Each one replaced a recurring manual process, and each one keeps a person in control of what actually changes in an account.</p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title"><a href="/work/search-query-analysis">Scheduled AI search query analysis</a></h3>
+          <span class="project-status status-work">In production</span>
+        </div>
+        <p class="project-desc">
+          Search term analysis used to cost at least an hour per account, every week. This workflow runs on a schedule: it pulls search-term data through a Google Ads MCP integration, reads it against client-specific context documents, and returns negative keyword recommendations with a confidence score and a suggested list placement. Recommendations arrive in Slack, where a person approves them before anything is applied.
+        </p>
+        <ul class="project-metrics">
+          <li><strong>8</strong> client accounts</li>
+          <li><strong>8+ hrs/week</strong> manual analysis replaced</li>
+          <li><strong>1,000+</strong> negatives supported per week</li>
+        </ul>
+        <div class="project-footer">
+          <ul class="tags">
+            <li class="tag">MCP</li>
+            <li class="tag">LLM analysis</li>
+            <li class="tag">Slack</li>
+            <li class="tag">Human-in-the-loop</li>
+          </ul>
+          <a class="project-link" href="/work/search-query-analysis">Read the case study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title"><a href="/work/google-ads-audit-framework">Automated Google Ads audit framework</a></h3>
+          <span class="project-status status-work">In production</span>
+        </div>
+        <p class="project-desc">
+          A framework that runs 100+ checks across a Google Ads account, produces a detailed Excel breakdown, identifies the key findings and populates a templated pitch or review deck from them. A manual audit took a couple of hours of an analyst's time; the automated version produces a first draft in roughly twenty minutes.
+        </p>
+        <ul class="project-metrics">
+          <li><strong>100+</strong> account checks</li>
+          <li><strong>2+ hrs &rarr; ~20 min</strong> to first output</li>
+          <li><strong>~90%</strong> of proposal audits</li>
+        </ul>
+        <div class="project-footer">
+          <ul class="tags">
+            <li class="tag">Google Ads API</li>
+            <li class="tag">Excel reporting</li>
+            <li class="tag">Deck generation</li>
+            <li class="tag">New business</li>
+          </ul>
+          <a class="project-link" href="/work/google-ads-audit-framework">Read the case study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title"><a href="/work/twelve-month-reviews">MCP-powered 12-month client reviews</a></h3>
+          <span class="project-status status-work">In production</span>
+        </div>
+        <p class="project-desc">
+          Annual performance reviews are valuable to clients and slow to build. This workflow asks the account manager a short set of strategic questions, retrieves the performance data it needs through a Google Ads MCP integration, and generates the full review deck in the background. The account manager then QAs the output rather than assembling it from scratch.
+        </p>
+        <ul class="project-metrics">
+          <li><strong>2+ hrs &rarr; ~2 min</strong> active preparation</li>
+          <li><strong>4 of 4</strong> PPC team members using it</li>
+        </ul>
+        <div class="project-footer">
+          <ul class="tags">
+            <li class="tag">MCP</li>
+            <li class="tag">Client reporting</li>
+            <li class="tag">Rollout &amp; adoption</li>
+          </ul>
+          <a class="project-link" href="/work/twelve-month-reviews">Read the case study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title"><a href="/work/merchant-center-monitoring">Merchant Center disapproval monitoring</a></h3>
+          <span class="project-status status-work">In production</span>
+        </div>
+        <p class="project-desc">
+          Product disapprovals quietly remove inventory from Shopping and Performance Max, and they are usually found late. This workflow runs daily across the highest-risk accounts, logs product approval status and posts a Slack alert when disapprovals appear. Built on a shared Merchant Center MCP integration, which I've also contributed code changes to.
+        </p>
+        <ul class="project-metrics">
+          <li><strong>~30,000</strong> products monitored</li>
+          <li><strong>Daily</strong> scheduled checks</li>
+          <li><strong>Slack</strong> disapproval alerts</li>
+        </ul>
+        <div class="project-footer">
+          <ul class="tags">
+            <li class="tag">Merchant Center</li>
+            <li class="tag">Feeds &amp; Shopping</li>
+            <li class="tag">Scheduled jobs</li>
+            <li class="tag">Slack</li>
+          </ul>
+          <a class="project-link" href="/work/merchant-center-monitoring">Read the case study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Feed management SaaS</h3>
+          <span class="project-status status-building">In development</span>
+        </div>
+        <p class="project-desc">
+          A commercial feed management platform I'm co-developing with a friend, aimed at performance marketers, freelancers and smaller agencies. Feed optimisation has a real effect on Shopping and Performance Max performance, but the tooling is typically priced and built for enterprise teams. We're building something that makes the work simpler and more accessible for everyone else. It isn't launched yet, and the codebase is private.
+        </p>
+        <div class="project-footer">
+          <ul class="tags">
+            <li class="tag">Product</li>
+            <li class="tag">Feeds &amp; Shopping</li>
+            <li class="tag">SaaS</li>
+            <li class="tag">AI-assisted development</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="building">
+    <h2>Also building</h2>
+    <p class="section-intro">Personal projects and experiments. This is where most of the learning happens before anything is good enough to put in front of a team.</p>
+
+    <div class="compact-grid">
+
+      <article class="compact-card">
+        <h3>Claude CLI</h3>
+        <p>My own command-line interface for the Claude API, with reusable personality and pre-prompt files, chats written out to text files, and the ability to reopen a previous session and carry on. Built to understand prompting, persistent context, context windows and token usage properly, rather than through a chat UI.</p>
+      </article>
+
+      <article class="compact-card">
+        <h3>Self-hosted AI environment</h3>
+        <p>I run a personal Ubuntu server on Hetzner with a self-hosted OpenClaw setup, and use it to experiment with agentic workflows, APIs and scheduled automation — including tracking Amazon listings for a side project. Hands-on with the Linux command line, cron, Tailscale, Cloudflare tunnels, Traefik and Fail2ban.</p>
+      </article>
+
+      <article class="compact-card">
+        <h3>DataForSEO MCP</h3>
+        <p>An MCP integration I built over the DataForSEO API to pull search trend and keyword data into the same workflows as everything else. Mine end to end, and the most likely candidate for a public repo once it's cleaned up.</p>
+      </article>
+
+      <article class="compact-card">
+        <h3>Time tracking MCP</h3>
+        <p>An MCP integration for our internal time tracking tool, so hours can be logged and checked in natural language — "add three hours to this project", "how much have I tracked this week". Made available to the wider team, though adoption has been limited.</p>
+      </article>
+
+      <article class="compact-card">
+        <h3>OneClickDismiss</h3>
+        <p>A Chrome extension that clears all Google Ads recommendations on the page in one click, instead of dismissing them one at a time through a confirmation dialog each. Small, but it saves real minutes across large accounts.</p>
+      </article>
+
+      <article class="compact-card">
+        <h3>Process notes automation</h3>
+        <p>A personal workflow that pulls together Slack, my notes and calendar context to summarise what I did, what got finished and what's still outstanding. Purely a productivity experiment, but a useful one.</p>
+      </article>
+
     </div>
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p>
-      I work as a Paid Search Executive managing Google Ads campaigns across a range of client accounts. Over the past year I've been moving increasingly into the technical side of the role - building integrations that connect Google Ads, GA4, and Slack together through AI-powered workflows using the Model Context Protocol (MCP).
-    </p>
-    <p>
-      The automation work started out of frustration with the amount of repetitive, manual work involved in account management - checking budgets, dismissing recommendations, pulling reports. I started writing small tools to handle these tasks and got hooked on the broader problem of making programmatic access to Google Ads data more useful and flexible.
-    </p>
-    <p>
-      Outside of work I'm building my own Google Ads dashboard and MCP server using the Google Ads API. The goal is a lightweight tool for querying campaign data, monitoring account health, and surfacing performance anomalies - something more purpose-built than the standard UI for the way I actually work with accounts.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">OneClickDismiss</span>
-          <span class="project-status status-live">Live</span>
-        </div>
-        <p class="project-desc">
-          A Chrome extension that dismisses all Google Ads recommendations on the page in one click. Built because the default flow of dismissing recommendations one by one, with a confirmation dialog each time, adds up to a meaningful time drain across large accounts. The extension injects a button into the recommendations page that handles the entire sequence automatically.
-        </p>
-        <div class="project-footer">
-          <div class="tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML</span>
-            <span class="tag">Chrome Extensions</span>
-            <span class="tag">Google Ads UI</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">Google Ads MCP Integration</span>
-          <span class="project-status status-work">Work project</span>
-        </div>
-        <p class="project-desc">
-          Connected the Google Ads MCP server to our internal AI workflow, enabling natural language queries against live campaign data. This replaced a set of manual reporting processes - account managers can now ask questions about performance, budget pacing, and keyword coverage directly, without needing to navigate the Google Ads UI or build custom reports. Anomaly alerts are routed through Slack.
-        </p>
-        <div class="project-footer">
-          <div class="tags">
-            <span class="tag">MCP</span>
-            <span class="tag">Google Ads API</span>
-            <span class="tag">Python</span>
-            <span class="tag">Slack API</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">GA4 MCP Integration</span>
-          <span class="project-status status-work">Work project</span>
-        </div>
-        <p class="project-desc">
-          Wired up Google Analytics 4 via MCP so that conversion data and audience performance sit alongside Google Ads data in the same context. Used for cross-channel analysis - understanding where campaign spend is actually driving results rather than just clicks. The combined view has changed how we approach budget allocation decisions.
-        </p>
-        <div class="project-footer">
-          <div class="tags">
-            <span class="tag">MCP</span>
-            <span class="tag">GA4 API</span>
-            <span class="tag">Python</span>
-            <span class="tag">Data Analysis</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">Google Ads Dashboard &amp; MCP Server</span>
-          <span class="project-status status-building">In development</span>
-        </div>
-        <p class="project-desc">
-          A personal project - building a custom Google Ads management dashboard and MCP server backed directly by the Google Ads API. The aim is a lightweight interface for campaign monitoring, performance reporting, and keyword planning that works the way I actually use data, rather than the way the standard UI presents it.
-        </p>
-        <p class="project-desc">
-          Planned API usage: <strong>GoogleAdsService</strong> for campaign performance queries and reporting, <strong>CampaignService</strong> for account structure and status monitoring, <strong>KeywordPlanService</strong> for keyword research tooling, and <strong>CustomerService</strong> for account hierarchy management. Initial scope is my own Google Ads accounts.
-        </p>
-        <div class="project-footer">
-          <div class="tags">
-            <span class="tag">Google Ads API</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Python</span>
-            <span class="tag">OAuth 2.0</span>
-            <span class="tag">REST API</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="prose">
+      <p>
+        I started in paid search and became steadily more interested in the systems behind the work — the APIs, the reporting pipelines, the parts of account management that are the same every week. More recently that's turned into LLMs, MCP and agentic tooling, and into building things that other people in the team actually use.
+      </p>
+      <p>
+        Today I manage around 10&ndash;15 paid media accounts at Platform81, with monthly budgets from £500 to £50,000, while building the workflows above: scheduled search query analysis, automated audits, Merchant Center monitoring and AI-generated client reviews. Managing accounts myself is the point — it's why I can tell the difference between a process that's annoying and a process that's genuinely worth automating, and why I know where a human has to stay in the loop.
+      </p>
+      <p>
+        Outside work I experiment with LLM APIs, MCP integrations, self-hosted agents and terminal-based AI development, and I'm co-developing a feed management SaaS platform with a friend. I'm currently working through Boot.dev's Linux and command-line material, mostly because I'd rather understand the terminal than rely on AI to hide it from me.
+      </p>
     </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="timeline">
+
+      <li>
+        <div class="role-header">
+          <div>
+            <div class="role-title">Paid Media Account Manager</div>
+            <div class="role-org">Platform81</div>
+          </div>
+          <div class="role-dates">Feb 2026 &ndash; Present</div>
+        </div>
+        <ul class="role-points">
+          <li>Manage 10&ndash;15 PPC clients across Google Ads and Microsoft Advertising, with monthly budgets from £500 to £50,000.</li>
+          <li>Strategy, optimisation, feed management, reporting, monthly calls and 12-month performance reviews.</li>
+          <li>Built and rolled out the AI and automation workflows above, including adoption across the four-person PPC team.</li>
+          <li>Recently started managing Amazon Ads alongside search.</li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="role-header">
+          <div>
+            <div class="role-title">PPC Account Manager / Senior Paid Search Executive</div>
+            <div class="role-org">Embryo</div>
+          </div>
+          <div class="role-dates">Jul 2024 &ndash; Aug 2025</div>
+        </div>
+        <ul class="role-points">
+          <li>B2B, B2C and e-commerce accounts, including individual monthly budgets above £100k.</li>
+          <li>Strategy, client management and quarterly business reviews.</li>
+          <li>Built budget pacing and monitoring tools for my own accounts, then versions for other members of the PPC team.</li>
+          <li>Delivered internal training on Google Ads, Google Tag Manager and Google Ads Scripts.</li>
+          <li>Worked closely with the Paid Social and SEO teams on cross-channel strategy.</li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="role-header">
+          <div>
+            <div class="role-title">Trainee &rarr; Paid Search Executive &rarr; Senior Paid Search Executive</div>
+            <div class="role-org">McCann Manchester</div>
+          </div>
+          <div class="role-dates">Aug 2022 &ndash; Jul 2024</div>
+        </div>
+        <ul class="role-points">
+          <li>Google Ads and Microsoft Advertising campaigns with budgets above £50k per month.</li>
+          <li>Search, Shopping, Performance Max and remarketing Display, plus Google Ads Scripts, reporting and analysis.</li>
+          <li>PPC AI Champion — exploring early generative AI and custom GPT use cases for the team.</li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="role-header">
+          <div>
+            <div class="role-title">Digital Marketer</div>
+            <div class="role-org">Business Utility Refunds</div>
+          </div>
+          <div class="role-dates">Jan 2022 &ndash; Jun 2022</div>
+        </div>
+        <ul class="role-points">
+          <li>Kickstart role at a startup: website design, Mailchimp email marketing and basic on-page SEO.</li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="role-header">
+          <div>
+            <div class="role-title">BA (Hons) Economics &mdash; 2:1</div>
+            <div class="role-org">Manchester Metropolitan University</div>
+          </div>
+          <div class="role-dates">2017 &ndash; 2020</div>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="capabilities">
+    <h2>Capabilities</h2>
+    <p class="section-intro">Where I'm strong, and where I'm not — stated honestly, because it matters more than a longer list.</p>
     <div class="skills-grid">
+
       <div class="skill-group">
-        <h3>Advertising</h3>
+        <h3>Performance media</h3>
         <ul>
           <li>Google Ads</li>
+          <li>Microsoft Advertising</li>
+          <li>Shopping &amp; Merchant Center</li>
           <li>Performance Max</li>
-          <li>Search &amp; Shopping</li>
-          <li>Bid strategy</li>
-          <li>Audience targeting</li>
+          <li>Remarketing Display</li>
+          <li>Feed optimisation</li>
         </ul>
       </div>
+
       <div class="skill-group">
-        <h3>APIs &amp; Data</h3>
+        <h3>Channel depth</h3>
+        <ul>
+          <li>Paid Search &mdash; core expertise</li>
+          <li>Shopping &amp; feeds &mdash; strong</li>
+          <li>Display &mdash; remarketing &amp; PMax</li>
+          <li>Paid Social &mdash; cross-team, plus hands-on TikTok Ads for a side project</li>
+          <li>Amazon Ads &mdash; recent, still learning</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>AI &amp; automation</h3>
+        <ul>
+          <li>LLM APIs, prompting &amp; context design</li>
+          <li>MCP workflows</li>
+          <li>Scheduled &amp; agentic automation</li>
+          <li>Human-in-the-loop design</li>
+          <li>AI-assisted development</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Platforms &amp; data</h3>
         <ul>
           <li>Google Ads API</li>
-          <li>GA4 API</li>
-          <li>Slack API</li>
-          <li>REST APIs</li>
-          <li>OAuth 2.0</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Development</h3>
-        <ul>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>HTML / CSS</li>
-          <li>Chrome Extensions</li>
-          <li>MCP Protocol</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Tooling</h3>
-        <ul>
-          <li>Google Ads Editor</li>
+          <li>Google Ads Scripts</li>
+          <li>Google Tag Manager</li>
           <li>Looker Studio</li>
-          <li>BigQuery</li>
-          <li>Git / GitHub</li>
-          <li>Claude / AI workflows</li>
+          <li>Google Cloud &amp; API authentication</li>
+          <li>Git &amp; GitHub</li>
         </ul>
       </div>
+
+      <div class="skill-group">
+        <h3>Ways of working</h3>
+        <ul>
+          <li>Client strategy, QBRs &amp; reviews</li>
+          <li>Process design &amp; measurement</li>
+          <li>Internal training &amp; tool rollout</li>
+          <li>Terminal &amp; Linux workflows</li>
+          <li>Cross-channel collaboration</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="panel">
+      <p><strong>On how I build.</strong> I'm not a software engineer and I don't present myself as one. I can read code well enough to follow what it's doing, and I build, extend and debug through AI-assisted development in the terminal using Claude Code and Codex. What I bring is knowing exactly which performance media problem is worth solving, what a workable solution looks like inside an account manager's week, and how to get other people to adopt it.</p>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Open to conversations about Google Ads API development, automation tooling, or paid search in general.</p>
+    <p>Open to conversations about performance media, applying AI and automation to marketing operations, or anything sitting between the two.</p>
     <div class="contact-links">
-      <a href="mailto:ollybreheny@icloud.com" class="btn btn-primary">Email me</a>
+      <a href="mailto:ollybreheny@gmail.com" class="btn btn-primary">Email me</a>
       <a href="https://www.linkedin.com/in/ollybreheny" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
       <a href="https://github.com/obreheny" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
     </div>
   </section>
 
+  </main>
+
   <footer>
-    <p>Olly Breheny &middot; ollyy.co.uk &middot; <a href="/privacy">Privacy</a></p>
+    <p>Olly Breheny &middot; ollyy.co.uk</p>
   </footer>
 
 </body>
