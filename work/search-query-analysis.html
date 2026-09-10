@@ -28,19 +28,18 @@
   </nav>
 
   <main id="main" class="article">
-    <span class="eyebrow">Case study</span>
+    <a class="eyebrow" href="/#work">← Selected work / Case study</a>
     <h1>Scheduled AI search query analysis</h1>
     <ul class="article-meta">
       <li>Platform81</li>
       <li>In production</li>
       <li>Google Ads &middot; MCP &middot; LLM &middot; Slack</li>
     </ul>
-    <p class="lede">A scheduled workflow that reviews search terms across eight client accounts, recommends negative keywords with a confidence score and a suggested list placement, and puts the results in front of a person before anything changes.</p>
+    <p class="lede">A scheduled workflow that automates first-pass analysis of search terms across eight client accounts, recommends negative keywords with a confidence score and a suggested list placement, and puts the results in front of a person before anything changes.</p>
 
     <ul class="impact">
       <li><strong>8</strong><span>client accounts covered</span></li>
-      <li><strong>8+ hrs</strong><span>of weekly manual analysis replaced</span></li>
-      <li><strong>1,000+</strong><span>negative additions supported per week</span></li>
+      <li><strong>8+ hrs</strong><span>previously spent on weekly manual analysis</span></li>
     </ul>
 
     <h2>Problem</h2>
@@ -87,19 +86,18 @@
 
     <h2>Human oversight</h2>
     <p>This system does not modify accounts on its own, and that is a design decision rather than a limitation I intend to remove.</p>
-    <p>Negatives are destructive in a specific way: a bad negative silently blocks traffic you wanted, and nothing in the reporting tells you it happened. The cost of a wrong exclusion is asymmetric against the cost of reviewing a list, so the AI does retrieval, analysis and recommendation — the part that scales — and a person does the approval, which is the part that carries the risk.</p>
+    <p>Negatives are destructive in a specific way: a bad negative silently blocks traffic you wanted, and nothing in the reporting tells you it happened. The cost of a wrong exclusion is asymmetric against the cost of reviewing a list, so the AI does retrieval, analysis and recommendation, and a person does the approval, which is the part that carries the risk.</p>
     <p>Each recommendation carries a confidence score and a suggested list placement, so a reviewer can move quickly through the clear cases and spend their attention on the ones that need it.</p>
 
     <h2>Impact</h2>
     <ul>
       <li>Running across eight of my client accounts.</li>
-      <li>Replaces a recurring manual process that took a minimum of an hour per account per week — 8+ hours weekly.</li>
-      <li>Supports over 1,000 negative keyword additions per week across those accounts.</li>
+      <li>Automates first-pass analysis for a recurring process that previously took 8+ hours per week. Recommendations still require approval.</li>
       <li>The review happens on schedule rather than whenever there is time for it, so waste is caught earlier.</li>
     </ul>
 
     <div class="panel">
-      <p><strong>Ownership, stated plainly.</strong> I built this workflow. I did not originally build the Google Ads MCP integration underneath it — that was built by my Head of PPC. I run my own version of it through Git, modify and extend it for what my workflows need, and build on top of it.</p>
+      <p><strong>Ownership, stated plainly.</strong> I built this workflow. I did not originally build the Google Ads MCP integration underneath it. That was built by my Head of PPC. I run my own version of it through Git, modify and extend it for what my workflows need, and build on top of it.</p>
       <p>No client data, account identifiers or employer code appear on this page. The architecture above is described at a conceptual level only.</p>
     </div>
 

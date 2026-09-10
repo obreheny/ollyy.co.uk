@@ -1,0 +1,15 @@
+# Local agent handoff notes: contains employer context, keep out of the public repo
+HANDOFF.md
+
+# Personal documents: this repo is public and served at ollyy.co.uk
+*.pdf
+
+.DS_Store
+
+# Local credentials and private documents
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.docx
